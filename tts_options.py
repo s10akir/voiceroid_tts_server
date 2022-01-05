@@ -1,8 +1,9 @@
+from typing import Optional
 from pydantic import BaseModel
-from pyvcroid2 import VcRoid2
 
 
 class TTSOptions(BaseModel):
     language: str
     voice: str
     text: str
+    pitch: Optional[float] = None  # TODO: validation 0.5 ~ 2.0

@@ -24,6 +24,9 @@ async def tts(tts_options: TTSOptions):
     vc.loadLanguage(tts_options.language)
     vc.loadVoice(tts_options.voice)
 
+    if tts_options.pitch:
+        vc.param.pitch = tts_options.pitch
+
     speach, _ = vc.textToSpeech(tts_options.text)
 
     return Response(content=speach, media_type="audio/wave")

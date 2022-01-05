@@ -24,6 +24,9 @@ async def tts(tts_options: TTSOptions):
     vc.loadLanguage(tts_options.language)
     vc.loadVoice(tts_options.voice)
 
+    if tts_options.speed:
+        vc.param.speed = tts_options.speed
+
     if tts_options.pitch:
         vc.param.pitch = tts_options.pitch
 
